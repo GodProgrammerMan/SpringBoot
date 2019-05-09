@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msdi.cctvdomestic.dao.UserMapper">
+
+	<select id="findUser" resultType="User">
+		select id,username,password
+		from
+		user
+		where username=#{username}
+	</select>
+	<select id="findAllUser" resultType="User">
+		select id,username,password
+		from
+		user
+	</select>
+	<update id="update" parameterType="User">
+		update user set
+		password=#{password}
+		where id=#{id}
+	</update>
+
+</mapper>
